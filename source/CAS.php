@@ -61,7 +61,7 @@ if (!defined('E_USER_DEPRECATED')) {
 /**
  * phpCAS version. accessible for the user by phpCAS::getVersion().
  */
-define('PHPCAS_VERSION', '1.3.4+');
+define('PHPCAS_VERSION', '1.3.5+');
 
 /**
  * @addtogroup public
@@ -219,6 +219,7 @@ define("PHPCAS_LANG_GERMAN", 'CAS_Languages_German');
 define("PHPCAS_LANG_JAPANESE", 'CAS_Languages_Japanese');
 define("PHPCAS_LANG_SPANISH", 'CAS_Languages_Spanish');
 define("PHPCAS_LANG_CATALAN", 'CAS_Languages_Catalan');
+define("PHPCAS_LANG_CHINESE_SIMPLIFIED", 'CAS_Languages_ChineseSimplified');
 
 /** @} */
 
@@ -1312,7 +1313,11 @@ class phpCAS
 
     /**
      * Set the serviceValidate URL of the CAS server.
-     * Used only in CAS 1.0 validations
+     * Used for all CAS versions of URL validations.
+     * Examples:
+     * CAS 1.0 http://www.exemple.com/validate
+     * CAS 2.0 http://www.exemple.com/validateURL
+     * CAS 3.0 http://www.exemple.com/p3/serviceValidate
      *
      * @param string $url the serviceValidate URL
      *
@@ -1334,7 +1339,11 @@ class phpCAS
 
     /**
      * Set the proxyValidate URL of the CAS server.
-     * Used for all CAS 2.0 validations
+     * Used for all CAS versions of proxy URL validations
+     * Examples:
+     * CAS 1.0 http://www.exemple.com/
+     * CAS 2.0 http://www.exemple.com/proxyValidate
+     * CAS 3.0 http://www.exemple.com/p3/proxyValidate
      *
      * @param string $url the proxyValidate URL
      *
